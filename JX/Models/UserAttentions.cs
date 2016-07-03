@@ -16,9 +16,11 @@ namespace JX.Models
         public int UserID { get; set; }
 
         [Key,Column(Order =1)]
-        [ForeignKey("Users")]
+        [ForeignKey("BeAttentedUsers")]
         public int BeAttentedUserID { get; set; }
         
         public virtual Users Users { get; set; }
-    }
+		public virtual Users BeAttentedUsers { get; set; }
+
+	}
 }
