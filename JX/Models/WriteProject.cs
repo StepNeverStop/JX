@@ -13,7 +13,6 @@ namespace JX.Models
         public WriteProject()
         {
             WriteComment = new HashSet<WriteComment>();
-            Users1 = new HashSet<Users>();
         }
 
         [Key]
@@ -46,8 +45,5 @@ namespace JX.Models
         public virtual ICollection<WriteComment> WriteComment { get; set; }
 
         public virtual WriteStates WriteStates { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Users> Users1 { get; set; }
     }
 }
