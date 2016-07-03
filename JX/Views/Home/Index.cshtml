@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<div>
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+    {
+        // @Html.AntiForgeryToken()
+        <hr />
+
+        <div>
+            <p>账号:</p>
+            <input type="text" name="user" value="">
+            <p>密码:</p>
+            <input type="password" name="pwd1" maxlength="16" value="">
+            <p>确认密码:</p>
+            <input type="password" name="pwd2" maxlength="16" value="">
+            <div>
+                <button class="btn btn-primary" type="submit">注册</button>
+            </div>
+        </div>
+    }
+    @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+    {
+        // @Html.AntiForgeryToken()
+        <hr />
+
+            <div>
+                <p>账号:</p>
+                <input type="text" name="user" value="">
+                <p>密码:</p>
+                <input type="password" name="pwd" maxlength="16" value="">
+                <div>
+                    <button class="btn btn-primary" type="submit">登录</button>
+                </div>
+            </div>
+    }
+</div>
+
+
+
