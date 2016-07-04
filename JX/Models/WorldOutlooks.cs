@@ -11,8 +11,8 @@ namespace JX.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public WorldOutlooks()
         {
-            Projects = new HashSet<Projects>();
-            UserWorldOutlookComment = new HashSet<UserWorldOutlookComment>();
+			//Projects = new HashSet<Projects>();
+			UserWorldOutlookComment = new HashSet<UserWorldOutlookComment>();
         }
 
         [Key]
@@ -32,10 +32,10 @@ namespace JX.Models
         [StringLength(1000)]
         public string Contents { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Projects> Projects { get; set; }
+		//[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+		//public virtual ICollection<Projects> Projects { get; set; }
 
-        public virtual Projects Projects1 { get; set; }
+		public virtual Projects Projects { get; set; }
 
         public virtual Users Users { get; set; }
 

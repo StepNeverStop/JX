@@ -11,7 +11,7 @@ namespace JX.Controllers
     {
         [HttpPost]
         [Authorize]
-        public ActionResult ApplyForNewProject(string projectName, string projectTypes, string writeType, int projectState, string projectIntro)
+        public ActionResult ApplyForNewProject(string projectName, string writeType, int projectState, string projectIntro)
         {
             EntityDbContext db = new EntityDbContext();
 
@@ -20,7 +20,6 @@ namespace JX.Controllers
                 db.Projects.Add(new Projects
                 {
                     ProjectName = projectName,
-                    ProjectTypes = projectTypes,
                     WriteType = writeType,
                     ProjectState = 3,
                     ProjectIntro = projectIntro,
