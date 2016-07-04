@@ -34,6 +34,8 @@ namespace JX.Models
 
         public int DownCount { get; set; }
 
+        public char IsBelongToMe { get; set; }
+
         public virtual Projects Projects { get; set; }
 
         public virtual Users Users { get; set; }

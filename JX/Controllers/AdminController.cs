@@ -40,5 +40,38 @@ namespace JX.Controllers
             db.SaveChanges();
             return RedirectToAction("ShowCheckProjects", "Admin");//显示其他待审核的项目
         }
+
+        public ActionResult ChooseWoForProj(int worldoutllookID)//为项目确定世界观
+        {
+
+            EntityDbContext db = new EntityDbContext();
+            WorldOutlooks wolook = db.WorldOutlooks.Find(worldoutllookID);
+            wolook.IsBelongToMe = 'Y';
+            Projects project = db.Projects.Find(wolook.ProjectID);
+            project.ProjectState = db.ProjectStates.Where(p => p.StateName.Equals("征集故事线中")).FirstOrDefault().ProjectState;
+            UpdateModel(wolook);
+            UpdateModel(project);
+            db.SaveChanges();
+
+            return View();//更新项目新状态
+        }
+        
+        public ActionResult ChooseScenarioForProj(int scenarioID)//为项目确定故事线
+        {
+            EntityDbContext db = new EntityDbContext();
+            Scenario scenario = db.Scenario.Find(scenarioID);
+            scenario.IsBelongToMe = 'Y';
+            if(scenario.Contents.Equals("完结"))
+            {
+                Projects project = db.Projects.Find(scenario.ProjectID);
+                project.ProjectState = db.ProjectStates.Where(p => p.StateName.Equals("可创作")).FirstOrDefault().ProjectState;
+                UpdateModel(project);
+            }
+            
+            UpdateModel(scenario);
+            db.SaveChanges();
+
+            return View();//更新项目新状态
+        }
     }
 }

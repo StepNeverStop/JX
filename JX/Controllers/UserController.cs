@@ -96,8 +96,6 @@ namespace JX.Controllers
             WorldOutlooks wols = db.WorldOutlooks.Find(id);
             //找到相应条目
 
-            wols.UpCount++;
-
             db.UserWorldOutlookComment.Add(new UserWorldOutlookComment
             {
                 WorldOutlookID = id,
@@ -108,6 +106,48 @@ namespace JX.Controllers
             });
 
             UpdateModel(wols);
+            db.SaveChanges();
+            return View();//应刷新页面 并显示评论内容
+        }
+
+        public ActionResult ScenarioComment(int id, string comment)//评论 故事线
+        {
+            EntityDbContext db = new EntityDbContext();
+            Scenario scenario = db.Scenario.Find(id);
+            //找到相应条目
+            
+
+            db.UserScenarioComment.Add(new UserScenarioComment
+            {
+                ScenarioID = id,
+                UserID = int.Parse(User.Identity.Name),
+                WriteTime = DateTime.Now,
+                ContentTypeNum = db.ContentTypes.Where(p => p.ContentType.Equals("评论")).First().ContentTypeNum,
+                Content = comment
+            });
+
+            UpdateModel(scenario);
+            db.SaveChanges();
+            return View();//应刷新页面 并显示评论内容
+        }
+
+        public ActionResult WriteProjectComment(int id, string comment)//评论 创作
+        {
+            EntityDbContext db = new EntityDbContext();
+            WriteProject wproject = db.WriteProject.Find(id);
+            //找到相应条目
+
+
+            db.WriteComment.Add(new WriteComment
+            {
+                WriteProjectID = id,
+                UserID = int.Parse(User.Identity.Name),
+                WriteTime = DateTime.Now,
+                ContentTypeNum = db.ContentTypes.Where(p => p.ContentType.Equals("评论")).First().ContentTypeNum,
+                Content = comment
+            });
+
+            UpdateModel(wproject);
             db.SaveChanges();
             return View();//应刷新页面 并显示评论内容
         }
