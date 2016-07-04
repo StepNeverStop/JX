@@ -116,5 +116,43 @@ namespace JX.Controllers
         {
             return View();
         }
+
+        public ActionResult SubmitWorldOutlook(int id,string content)//写世界观
+        {
+            EntityDbContext db = new EntityDbContext();
+            db.WorldOutlooks.Add(new WorldOutlooks
+            {
+                ProjectID = id,
+                UserID = int.Parse(User.Identity.Name),
+                WriteTime = DateTime.Now,
+                UpCount = 0,
+                DownCount = 0,
+                Contents = content
+            });
+            db.SaveChanges();
+            return View();//返回当前项目的页面  并显示自己刚刚提交的信息
+        }
+
+        public ActionResult SubmitScenario(int id,string content)//写故事线
+        {
+
+            EntityDbContext db = new EntityDbContext();
+            int count = db.Scenario.Where(p => p.ProjectID == id).ToList().Count;
+            db.Scenario.Add(new Scenario
+            {
+                ProjectID = id,
+                Counts = count++,
+                Contents = content,
+                UserID = int.Parse(User.Identity.Name),
+                WriteTime = DateTime.Now,
+                UpCount = 0,
+                DownCount = 0
+            });
+            db.SaveChanges();
+
+            return View();//返回当前项目的页面 并显示自己刚刚提交的信息
+        }
+
+        //public ActionResult SubmitWriteProject(int id,)//创作
     }
 }

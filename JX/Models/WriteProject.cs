@@ -45,5 +45,6 @@ namespace JX.Models
         public virtual ICollection<WriteComment> WriteComment { get; set; }
 
         public virtual WriteStates WriteStates { get; set; }
+
     }
 }
