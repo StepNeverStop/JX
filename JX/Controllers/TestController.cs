@@ -11,10 +11,20 @@ namespace JX.Controllers {
 		// GET: Test
 		public ActionResult Index() {
 			EntityDbContext db = new EntityDbContext();
-			var p = db.Projects.Include(t=>t.ProjectTypes).FirstOrDefault();
+			var p = db.Projects.Include(t => t.ProjectTypes).FirstOrDefault();
 			string test = "";
 			p.ProjectTypes.ToList().ForEach(t => {
 				test += t.TypeName + " ";
+			});
+
+			// 添加一个projects 并为他添加一个新的projecttypes
+			db.Projects.Add(new Projects {
+				ProjectName = "test",
+				ProjectTypes = new List<ProjectTypes> {
+					new ProjectTypes {
+						TypeName = "type"
+					}
+				}
 			});
 			return Content(test);
 		}
