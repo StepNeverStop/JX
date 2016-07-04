@@ -37,6 +37,11 @@ namespace JX.Models
         [StringLength(100)]
         public string StateInfo { get; set; }
 
+        public int ChapNum { get; set; }
+        
+        [StringLength(20)]
+        public string ChapTitle { get; set; }
+
         public virtual Projects Projects { get; set; }
 
         public virtual Users Users { get; set; }

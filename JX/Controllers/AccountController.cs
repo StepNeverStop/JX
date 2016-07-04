@@ -138,5 +138,52 @@ namespace JX.Controllers
 
             return View();//返回取消关注成功的页面
         }
+
+        public int ShowAttendCount()//获取关注的数量
+        {
+            EntityDbContext db = new EntityDbContext();
+            return db.UserAttentions.Where(p => p.UserID == int.Parse(User.Identity.Name)).ToList().Count;
+        }
+
+        public int ShowFansCount()//获取粉丝的数量
+        {
+
+            EntityDbContext db = new EntityDbContext();
+            return db.UserAttentions.Where(p => p.BeAttentedUserID == int.Parse(User.Identity.Name)).ToList().Count;
+        }
+
+        public ActionResult ShowAttendList()//显示关注页面
+        {
+            EntityDbContext db = new EntityDbContext();
+            List<UserAttentions> uas= db.UserAttentions.Where(p => p.UserID == int.Parse(User.Identity.Name)).ToList();
+            List<string> users = new List<string>();
+            foreach(var item in uas)
+            {
+                users.Add(db.Users.Find(item.BeAttentedUserID).Nickname);
+            }
+
+            ViewBag.attendcount = uas.Count;
+            ViewBag.attendlist = users;
+
+            return View();//显示关注页面
+
+
+        }
+
+        public ActionResult ShowFansList()//显示粉丝页面
+        {
+
+            EntityDbContext db = new EntityDbContext();
+            List<UserAttentions> uas = db.UserAttentions.Where(p => p.BeAttentedUserID == int.Parse(User.Identity.Name)).ToList();
+            List<string> users = new List<string>();
+            foreach (var item in uas)
+            {
+                users.Add(db.Users.Find(item.UserID).Nickname);
+            }
+            ViewBag.fanscount = uas.Count;
+            ViewBag.fanslist = users;
+
+            return View();//显示粉丝页面
+        }
     }
 }

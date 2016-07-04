@@ -31,6 +31,8 @@ namespace JX.Controllers
             }
 
             ViewBag.Nickname = MyAccount.Nickname;
+
+            //乱序插入
             foreach (Projects proj in Projects)
             {
                 newList.Insert(random.Next(newList.Count), proj);

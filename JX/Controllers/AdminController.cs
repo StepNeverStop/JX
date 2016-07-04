@@ -9,7 +9,7 @@ namespace JX.Controllers
 {
     public class AdminController : Controller
     {
-        public ActionResult ShowCheckProjects()
+        public ActionResult ShowCheckProjects()//显示待审核项目
         {
             EntityDbContext db = new EntityDbContext();
             List<Projects> Projects = db.Projects.Where(p => p.ProjectState == 3).ToList();
