@@ -19,20 +19,17 @@ namespace JX.Controllers
 
             if(db.Projects.Where(p=>p.ProjectName.Equals(projectName)).FirstOrDefault()==null)
             {
-                db.Projects.Add(new Projects
-                {
-                    ProjectName = projectName,
-                    WriteType = writeType,
-                    ProjectState = 3,
-                    ProjectIntro = projectIntro,
-                    UserID = int.Parse(User.Identity.Name),
-                    //ProjectTypes=new List<ProjectTypes>
-                    //{
-                        //这里有一个把传进来的所有类型 一个个加入的问题 没有想到合适的方法  在这里写Foreach并不可写
-                    //}
-                });
+				List<ProjectTypes> types = db.ProjectTypes.Where(p => projectTypes.Contains(p.TypeName)).ToList();
+				db.Projects.Add(new Projects {
+					ProjectName = projectName,
+					WriteType = writeType,
+					ProjectState = 3,
+					ProjectIntro = projectIntro,
+					UserID = int.Parse(User.Identity.Name),
+					ProjectTypes = types
+				});
                 db.SaveChanges();
-                return View();//显示申请成功，待审核的页面
+				return View();//显示申请成功，待审核的页面
             }
 
             return View();//显示申请失败，请重新填写的页面
