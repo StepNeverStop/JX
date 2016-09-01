@@ -222,5 +222,11 @@ namespace JX.Controllers
 
             return View();
         }
+
+        public ActionResult ShowRegister()
+        {
+
+            return View();
+        }
     }
 }

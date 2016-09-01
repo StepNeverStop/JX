@@ -302,6 +302,7 @@
     <Content Include="Views\Project\DetailD.cshtml" />
     <Content Include="Views\Project\WriteProject.cshtml" />
     <Content Include="Views\User\Project.cshtml" />
+    <Content Include="Views\Account\ShowRegister.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
