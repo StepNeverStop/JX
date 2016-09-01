@@ -1,0 +1,27 @@
+﻿
+@{
+	ViewBag.Title = "WriteProject";
+	Layout = "~/Views/Shared/modelPage.cshtml";
+
+	JX.Models.WriteProject writeProject = ViewBag.WriteProject;
+}
+@section CSS{
+	<link rel="stylesheet" type="text/css" href="~/Content/novel_1.css" />
+}
+
+<div class="content">
+	<h1>@writeProject.Projects.ProjectName</h1>
+	<h3>第<span>@writeProject.ChapNum</span>章 @writeProject.ChapTitle</h3>
+	<p>@writeProject.Contents</p>
+	<div>
+		@if(@ViewBag.PrevId != null) {
+			<a href="/Project/WriteProject?id=@ViewBag.PrevId">[上一章]</a>
+		}
+		
+		<a href="/Project/DetailD?id=@writeProject.Projects.ID">返回目录页</a>
+
+		@if(@ViewBag.NextId != null) {
+			<a href="/Project/WriteProject?id=@ViewBag.NextId">[下一章]</a>
+		}
+	</div>
+</div>

@@ -1,0 +1,35 @@
+﻿
+@{
+	ViewBag.Title = "DetailD";
+	Layout = "~/Views/Shared/modelPage.cshtml";
+
+	JX.Models.Projects project = ViewBag.Project;
+}
+@section CSS{
+	<link rel="stylesheet" type="text/css" href="~/Content/novel.css" />
+}
+<div class="project">
+	<h1 class="project_name">
+		@project.ProjectName
+		@foreach(var type in project.ProjectTypes) {
+			<span class="project_type">@type.TypeName</span>
+		}
+		<span class="project_status">[@project.ProjectStates.StateName]</span>
+	</h1>
+	<div class="intro">
+		<h2>简介：<span>作者：@project.Users.Nickname</span></h2>
+		<p>
+			@project.ProjectIntro
+		</p>
+	</div>
+	<h2 class="charpter_h2">章节目录</h2>
+	<div class="charpter">
+		<h4>正文</h4>
+		<ul>
+			@foreach(var write in project.WriteProject) {
+				<li><a href="/Project/WriteProject?id=@write.ID">第<span>@write.ChapNum</span>章 @write.ChapTitle</a></li>
+			}
+		</ul>
+	</div>
+
+</div>		

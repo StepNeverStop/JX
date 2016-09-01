@@ -1,0 +1,87 @@
+﻿
+@{
+	ViewBag.Title = "Project";
+	Layout = "~/Views/Shared/modelPage.cshtml";
+
+	JX.Models.Projects project = ViewBag.Project;
+}
+@section CSS{
+	<link rel="stylesheet" type="text/css" href="~/Content/project.css" />
+}
+<div class="project">
+	<h1 class="project_name">
+		《@project.ProjectName》
+
+		@foreach(var type in project.ProjectTypes) {
+			<span class="project_type">@type.TypeName</span>
+		}
+		<span class="project_status">[@project.ProjectStates.StateName]</span>
+	</h1>
+	<div class="intro">
+		<h2>简介：</h2>
+		<p>
+			@project.ProjectIntro
+		</p>
+	</div>
+	@*<div class="worldoutlook">
+		<h2>世界观： <span>采纳人ID：Decery</span></h2>
+		<p>
+			@project
+		</p>
+	</div>*@
+	@*<div class="scenario">
+		<h2>故事线：</h2>
+		<div class="scenario_content">
+			<span>萧炎退婚</span>-><span>药老显身</span>-><span>进入学院</span>
+		</div>
+	</div>*@
+	@*<hr class="project_product_hr" />
+	<div class="tiezi">
+		<p class="tiezi_username">zzy<span class="tiezi_title">斗破苍穹世界观：</span></p>
+		<div class="dingandcai_position">
+			<p class="tiezi_content">
+				三十年河东，三十年河西，莫欺少年穷！ 年仅15岁的萧家废物，于此地，立下了誓言，从今以后便一步步走向斗气大陆巅峰！
+			</p>
+			<form class="dingandcai" action="" method="">
+				<input id="ding" type="submit" value="顶">
+				<input id="cai" type="submit" value="踩">
+				<span id="pinglun">发表评论</span>
+			</form>
+		</div>
+		<div class="pinglun_form" id="pinglun_form">
+			<form action="" method="">
+				<textarea name="" id="pinglun_content" cols="30" rows="10" maxlength="100" placeholder="发表评论"></textarea>
+				<br>
+				<input id="pinglun_submit" type="submit">
+			</form>
+		</div>
+		<h3 class="pinglun_title">评论:</h3>
+		<div class="pinglun">
+			<span class="pinglun_username">Decery:</span>
+			<span class="pinglun_content">
+				抢个沙发抢个沙发抢个沙发抢个沙发抢个沙发抢个沙发抢个沙发抢个沙发抢个沙发抢个沙发抢个沙发抢个沙发抢个沙发抢个沙发
+			</span>
+			<p class="time">2016-7-5</p>
+		</div>
+		<div class="pinglun">
+			<span class="pinglun_username">Decery:</span>
+			<span class="pinglun_content">
+				抢个沙发抢个沙发抢个沙发抢个沙发抢个沙发抢个沙发抢个沙发抢个沙发抢个沙发抢个沙发抢个沙发抢个沙发抢个沙发抢个沙发
+			</span>
+			<p class="time">2016-7-5</p>
+		</div>
+
+		<hr />
+	</div>*@
+
+
+	<div class="project_product">
+		<h1>参与写书:</h1>
+		<form action="/User/WriteProject" method="post">
+			<input type="hidden" name="id" value="@project.ID" />
+			<input type="text" name="chaptitle" id="title" placeholder="主题" />
+			<textarea name="contents" id="content" cols="40" rows="10" placeholder="请写下你的想法"></textarea>
+			<input id="submit" type="submit" value="提交" />
+		</form>
+	</div>
+</div>

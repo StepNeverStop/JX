@@ -58,6 +58,6 @@ namespace JX.Models {
 		public virtual ICollection<WriteProject> WriteProject { get; set; }
 
 
-		public ICollection<ProjectTypes> ProjectTypes { get; set; }
+		public virtual ICollection<ProjectTypes> ProjectTypes { get; set; }
 	}
 }

@@ -299,11 +299,13 @@
     <Content Include="Views\Project\ShowJitangList.cshtml" />
     <Content Include="Views\Project\ShowBijiList.cshtml" />
     <Content Include="Views\ProjectOperate\ShowApplyForNewProject.cshtml" />
+    <Content Include="Views\Project\DetailD.cshtml" />
+    <Content Include="Views\Project\WriteProject.cshtml" />
+    <Content Include="Views\User\Project.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Admin\" />
-    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

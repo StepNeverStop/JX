@@ -14,9 +14,9 @@
     <hr />
     <div class="write_content">
         <form class="write_form" action="/ProjectOperate/ApplyForNewProject" method="post">
-            <label for="projectName">题目</label><input class="wrire_title" id="projectName" type="text">
+            <label for="projectName">题目</label><input class="wrire_title" name="projectName" id="projectName" type="text">
             <label for="writeType">创作模式</label>
-            <select class="write_model" id="writeType">
+            <select class="write_model" name="writeType" id="writeType">
                 <option value="单人">单人</option>
                 <option value="多人" selected="selected">合作</option>
             </select>
@@ -25,26 +25,26 @@
             <label>创作类型个数最多为3</label>
             <br />
             <label for="xuhuan">玄幻</label>
-            <input type="checkbox" name="type" id="xuhuan" />
+            <input type="checkbox" name="projectTypes" value="玄幻" />
             <label for="xianxia">仙侠</label>
-            <input type="checkbox" name="type" id="xianxia" />
+            <input type="checkbox" name="projectTypes" value="仙侠" />
             <label for="dushi">都市</label>
-            <input type="checkbox" name="type" id="dushi" />
+            <input type="checkbox" name="projectTypes" value="都市" />
             <label for="yanqing">言情</label>
-            <input type="checkbox" name="type" id="yanqing" />
+            <input type="checkbox" name="projectTypes" value="言情" />
             <label for="wangyou">网游</label>
-            <input type="checkbox" name="type" id="wangyou" />
+            <input type="checkbox" name="projectTypes" value="网游" />
             <label for="weixiaoshuo">微小说</label>
-            <input type="checkbox" name="type" id="weixiaoshuo" />
+            <input type="checkbox" name="projectTypes" value="微小说" />
             <label for="qita">其他</label>
-            <input type="checkbox" name="type" id="qita" />
+            <input type="checkbox" name="projectTypes" value="其他" />
             <br />
 
 
 
             <div class="write_forml">
                 <label for="projectIntro">简介</label>
-                <textarea maxlength="200" id="projectIntro" cols="40" rows="10" placeholder="请在此填写您的小说简介，最多200字"></textarea>
+                <textarea maxlength="200" name="projectIntro" id="projectIntro" cols="40" rows="10" placeholder="请在此填写您的小说简介，最多200字"></textarea>
             </div>
             <br />
             <input id="submit" type="submit" value="提交">

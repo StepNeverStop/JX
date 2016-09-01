@@ -6,91 +6,96 @@ using System.Web.Mvc;
 using System.Data.Entity;
 using JX.Models;
 
-namespace JX.Controllers
-{
-    public class ProjectController : Controller
-    {
-        // GET: Project
-        public ActionResult Index()
-        {
-            return View();
-        }
+namespace JX.Controllers {
+	public class ProjectController : Controller {
+		// GET: Project
+		public ActionResult Index() {
+			return View();
+		}
 
-        public ActionResult suibiankankan()
-        {
-            return RedirectToAction("HomePage", "Home");
-        }
+		public ActionResult suibiankankan() {
+			return RedirectToAction("HomePage", "Home");
+		}
 
-        public ActionResult ShowTextList(string typename)//显示文本页面
-        {
-            //虽然可以总的写一个方法，但是我就喜欢分开写 ，你咬我呀
-            EntityDbContext db = new EntityDbContext();
-            var a = db.ProjectTypes.Include(t => t.Projects).Where(p => p.TypeName.Equals(typename)).FirstOrDefault();
-            ViewBag.xiaoshuolist = a.Projects;
-            return View();//显示文本页面
-        }
-        public ActionResult ShowWeixiaoshuoList()//显示微小说列表
-        {
-            EntityDbContext db = new EntityDbContext();
-            var a = db.ProjectTypes.Include(t => t.Projects).Where(p => p.TypeName == "微小说").FirstOrDefault();
-            ViewBag.weixiaoshuo = a.Projects;
-            return View();//显示微小说页面
-        }
+		public ActionResult ShowTextList(string typename)//显示文本页面
+		{
+			//虽然可以总的写一个方法，但是我就喜欢分开写 ，你咬我呀
+			EntityDbContext db = new EntityDbContext();
+			var a = db.ProjectTypes.Include(t => t.Projects).Where(p => p.TypeName.Equals(typename)).FirstOrDefault();
+			ViewBag.xiaoshuolist = a.Projects;
+			return View();//显示文本页面
+		}
+		public ActionResult ShowWeixiaoshuoList()//显示微小说列表
+		{
+			EntityDbContext db = new EntityDbContext();
+			var a = db.ProjectTypes.Include(t => t.Projects).Where(p => p.TypeName == "微小说").FirstOrDefault();
+			ViewBag.weixiaoshuo = a.Projects;
+			return View();//显示微小说页面
+		}
 
-        public ActionResult ShowXiuzhenList()//显示修真列表
-        {
-            EntityDbContext db = new EntityDbContext();
-            var a = db.ProjectTypes.Include(t => t.Projects).Where(p => p.TypeName == "修真").FirstOrDefault();
-            ViewBag.xiuzhen = a.Projects;
-            return View();
-        }
+		public ActionResult ShowXiuzhenList()//显示修真列表
+		{
+			EntityDbContext db = new EntityDbContext();
+			var a = db.ProjectTypes.Include(t => t.Projects).Where(p => p.TypeName == "修真").FirstOrDefault();
+			ViewBag.xiuzhen = a.Projects;
+			return View();
+		}
 
-        public ActionResult ShowDushiList()//显示都市列表
-        {
-            EntityDbContext db = new EntityDbContext();
-            var a = db.ProjectTypes.Include(t => t.Projects).Where(p => p.TypeName == "都市").FirstOrDefault();
-            ViewBag.dushi = a.Projects;
-            return View();
-        }
+		public ActionResult ShowDushiList()//显示都市列表
+		{
+			EntityDbContext db = new EntityDbContext();
+			var a = db.ProjectTypes.Include(t => t.Projects).Where(p => p.TypeName == "都市").FirstOrDefault();
+			ViewBag.dushi = a.Projects;
+			return View();
+		}
 
-        public ActionResult ShowYanqingList()//显示言情列表
-        {
-            EntityDbContext db = new EntityDbContext();
-            var a = db.ProjectTypes.Include(t => t.Projects).Where(p => p.TypeName == "言情").FirstOrDefault();
-            ViewBag.yanqing = a.Projects;
-            return View();
-        }
+		public ActionResult ShowYanqingList()//显示言情列表
+		{
+			EntityDbContext db = new EntityDbContext();
+			var a = db.ProjectTypes.Include(t => t.Projects).Where(p => p.TypeName == "言情").FirstOrDefault();
+			ViewBag.yanqing = a.Projects;
+			return View();
+		}
 
-        public ActionResult ShowXuanhuanList()//显示玄幻列表
-        {
-            EntityDbContext db = new EntityDbContext();
-            var a = db.ProjectTypes.Include(t => t.Projects).Where(p => p.TypeName == "玄幻").FirstOrDefault();
-            ViewBag.xuanhuan = a.Projects;
-            return View();
-        }
+		public ActionResult ShowXuanhuanList()//显示玄幻列表
+		{
+			EntityDbContext db = new EntityDbContext();
+			var a = db.ProjectTypes.Include(t => t.Projects).Where(p => p.TypeName == "玄幻").FirstOrDefault();
+			ViewBag.xuanhuan = a.Projects;
+			return View();
+		}
 
-        public ActionResult ShowJitangList()//显示鸡汤列表
-        {
-            EntityDbContext db = new EntityDbContext();
-            var a = db.ProjectTypes.Include(t => t.Projects).Where(p => p.TypeName == "鸡汤").FirstOrDefault();
-            ViewBag.jitang = a.Projects;
-            return View();
-        }
+		public ActionResult ShowJitangList()//显示鸡汤列表
+		{
+			EntityDbContext db = new EntityDbContext();
+			var a = db.ProjectTypes.Include(t => t.Projects).Where(p => p.TypeName == "鸡汤").FirstOrDefault();
+			ViewBag.jitang = a.Projects;
+			return View();
+		}
 
-        public ActionResult ShowBijiList()//显示笔记列表
-        {
-            EntityDbContext db = new EntityDbContext();
-            var a = db.ProjectTypes.Include(t => t.Projects).Where(p => p.TypeName == "笔记").FirstOrDefault();
-            ViewBag.biji = a.Projects;
-            return View();
-        }
+		public ActionResult ShowBijiList()//显示笔记列表
+		{
+			EntityDbContext db = new EntityDbContext();
+			var a = db.ProjectTypes.Include(t => t.Projects).Where(p => p.TypeName == "笔记").FirstOrDefault();
+			ViewBag.biji = a.Projects;
+			return View();
+		}
 
-        public ActionResult DetailD()//阅读单人创作小说
-        {
-            EntityDbContext db = new EntityDbContext();
+		public ActionResult DetailD(int id)//阅读单人创作小说
+		{
+			EntityDbContext db = new EntityDbContext();
 
-
-            return View();
-        }
-    }
+			Projects project = db.Projects.FirstOrDefault(p => p.ID == id);
+			ViewBag.Project = project;
+			return View();
+		}
+		public ActionResult WriteProject(int id) {
+			EntityDbContext db = new EntityDbContext();
+			var writeProject = db.WriteProject.FirstOrDefault(p => p.ID == id);
+			ViewBag.WriteProject = writeProject;
+			ViewBag.PrevId = db.WriteProject.FirstOrDefault(p => p.ProjectID == writeProject.ProjectID && p.ChapNum == writeProject.ChapNum - 1)?.ID;
+			ViewBag.NextId = db.WriteProject.FirstOrDefault(p => p.ProjectID == writeProject.ProjectID && p.ChapNum == writeProject.ChapNum + 1)?.ID;
+			return View();
+		}
+	}
 }
