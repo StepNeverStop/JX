@@ -1,0 +1,167 @@
+.project{
+	margin-top: 20px;
+	background-color: #FBFDFE;
+}
+.project_name{
+	padding: 10px;
+	text-align: center;
+	color: black;
+}
+.project_status{
+	color: red;
+}
+.porject_type{
+	color: #666666;
+}
+.intro,.worldoutlook,.scenario{
+	width:60%;
+	margin: 20px auto;
+}
+.project_name span{
+	font-size: 14px;
+	padding: 0 5px;
+}
+.intro h2,.worldoutlook h2,.scenario h2{
+	padding-left: 20px;
+}
+.intro p,.worldoutlook p,.scenario p {
+	padding: 20px;
+	text-indent: 32px;
+}
+.worldoutlook h2{
+	position: relative;
+}
+.worldoutlook span{
+	font-size: 14px;
+	color: #666666;
+	position: absolute;
+	right: 26px;
+	top: 10px;
+}
+.scenario_content{
+	padding: 20px;
+}
+.scenario_content span{
+	color: #609;
+	display: inline-block;
+	padding: 0 10px;
+}
+.tiezi{
+	width: 80%;
+	margin: 10px auto;
+}
+.tiezi p{
+	margin: 0 40px;
+}
+.tiezi_username{
+	padding: 10px 0;
+}
+.tiezi_title{
+	display: inline-block;
+	padding: 10px;
+}
+.tiezi_content{
+	padding-bottom: 50px;
+}
+.dingandcai_position{
+	position:relative;
+}
+.dingandcai{
+	position: absolute;
+	right: 50px;
+	bottom: 10px;
+}
+.dingandcai input,.dingandcai span{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	border: 1px solid dodgerblue;
+	background-color: #FBFDFE;
+	border-radius: 15px;
+	cursor: pointer;
+}
+.dingandcai #pinglun{
+	padding-top: 3px;
+	padding-bottom: -4px;
+	width: 70px;
+	border-radius: 5px;
+	text-align: center;
+	height: 25px;
+}
+.pinglun_title{
+	margin-left: -40px;
+}
+.pinglun{
+	margin-left: 70px;
+	margin-right: 40px;
+}
+.pinglun span{
+	font-size: 16px;
+}
+.pinglun_content,.pinglun_username{
+	display: inline-block;
+}
+.pinglun_username{
+	margin-left: -60px;
+}
+.pinglun_content{
+	padding-bottom: 10px;
+}
+.pinglun p.time{
+	text-align: right;
+	margin:0;
+	padding-bottom: 20px;
+}
+.pinglun_form{
+	text-align: center;
+	display: none;
+}
+.pinglun_form input,.pinglun_form textarea{
+	display: inline-block;
+	margin: 20px;
+	padding: 10px;
+	width:60%;
+	border-radius: 5px;
+}
+.pinglun_form #pinglun_submit{
+	width: 60px;
+	margin-top: 0;
+	background-color: #FBFDFE;
+	cursor: pointer;
+}
+.project_product_hr{
+	margin: 20px auto;
+	width: 85%;
+}
+.project_product{
+	width:60%;
+	margin: 0 auto;
+	text-align: center;
+	position: relative;
+}
+.project_product h1{
+	padding: 10px;
+	text-align: left;
+	padding-left: 40px;
+}
+.project_product input,.project_product textarea{
+	display: inline-block;
+	margin: 20px;
+	padding: 10px;
+	width:60%;
+	border-radius: 5px;
+}
+.project_product #content{
+	width:398px;
+	margin-bottom: 80px;
+}
+.project_product #submit{
+	position: absolute;
+	bottom:0px;
+	right:100px;
+	border:0;
+	width:100px;
+	color: whitesmoke;
+	font-weight: bold;
+	background: linear-gradient(to bottom,#1d7fe2,#002AFF);
+}

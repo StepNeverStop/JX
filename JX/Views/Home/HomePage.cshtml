@@ -4,21 +4,52 @@
     ViewBag.Title = "军师网————随便你怎么写！";
 }
 
-<h2>HomePage</h2>
+@section CSS{
+    <link href="@Url.Content("~/Content/Index.css")" rel="Stylesheet" type="text/css" />
+    }
 
-@if(Model==null)
-{
+@if (Model == null)
+            {
     <p>暂无作品！</p>
 }
 else
 {
-    <a href="/Home/HomePage">随便看看</a>
-    foreach(var item in Model)
-    {
-        <a href="/Project/Detail">@item.ProjectName</a>
-        <p>@item.ProjectTypes</p>
-        <p>@item.ProjectStates.StateName</p>
-        <p>@item.ProjectIntro</p>
-        <br/>
-    }
-}
+    <div class="s_good_project">
+        <p class="s_good_project_tltle">大家都在看：</p>
+       @foreach (var item in Model)
+        {
+        if (item.WriteType == "单人")
+        {
+        <div class="good_project">
+            <h2>@item.ProjectName</h2>
+            <p>
+                &nbsp;&nbsp;&nbsp;&nbsp;@item.ProjectIntro
+                @using (Html.BeginForm("DetailD", "Project", FormMethod.Post))
+                {
+                    <input type="hidden" value="@item.ID" name="id">
+                    <button type="submit">阅读>></button>
+                }
+            </p>
+        </div>
+        }
+        }
+        </div>
+        <div class="projects">
+            @foreach (var item in Model)
+            {
+            if (item.WriteType == "多人")
+            {
+            <div class="project">
+                <span class="project_name"><a href="project.html">@item.ProjectName</a></span>
+                <span class="project_type">[玄幻]</span>
+                <span class="project_status">状态：@item.ProjectStates.StateName</span>
+                <p class="project_intro">
+                    @item.ProjectIntro
+                </p>
+            </div>
+            }
+            }
+            </div>
+            }
+
+

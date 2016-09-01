@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "ShowChangePwd";
+}
+
+@section CSS{
+    <link rel="stylesheet" type="text/css" href="~/Content/changepsw.css" />
+}
+@section JS{
+    <script type="text/javascript" src="~/myScripts/changepwd.js"></script>
+}
+<div class="user_content">
+    <div class="sidebar">
+        <p class="sidebar_title">个人书屋向导</p>
+        <ul>
+            <li><a href="/Account/ShowPersonInfo">个人信息</a></li>
+            <li><a href="/Account/ShowChangePwd">修改密码</a></li>
+            <li><a href="/Account/ShowAttendList">关注列表</a></li>
+            <li><a href="/Account/ShowFansList">粉丝列表</a></li>
+        </ul>
+    </div>
+
+
+
+
+    <div class="show_content">
+        <form class="register" action="/Account/ChangePassword" method="post">
+            <p class="register_title">修改密码</p>
+            <div class="register_content">
+                <span>原密码：</span>
+                <input type="text" name="oldpwd" id="username">
+                <span id="register-tip1" class="register-tip">请输入原密码</span>
+                <span>新密码：</span>
+                <input type="password" name="newpwd1" id="password">
+                <span id="register-tip2" class="register-tip">请输入新密码</span>
+                <span>确认密码：</span>
+                <input type="password" name="newpwd2" id="spassword">
+                <span id="register-tip3" class="register-tip">请输入确认密码</span>
+                <input type="submit" id="submit" value="提交">
+            </div>
+        </form>
+    </div>
+</div>
+

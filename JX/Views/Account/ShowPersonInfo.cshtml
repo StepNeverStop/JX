@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "ShowPersonInfo";
+}
+@section CSS{
+    <link rel="stylesheet" type="text/css" href="~/Content/user.css" />
+    }
+@section JS{
+    <script type="text/javascript" src="~/myScripts/user.js"></script>
+
+    }
+<div class="user_content">
+    <div class="sidebar">
+        <p class="sidebar_title">个人书屋向导</p>
+        <ul>
+            <li><a href="/Account/ShowPersonInfo">个人信息</a></li>
+            <li><a href="/Account/ShowChangePwd">修改密码</a></li>
+            <li><a href="/Account/ShowAttendList">关注列表</a></li>
+            <li><a href="/Account/ShowFansList">粉丝列表</a></li>
+        </ul>
+    </div>
+
+    <div class="show_content">
+        <h2>个人信息</h2>
+        <ul>
+            <li>账户名：<span>@ViewBag.Username</span></li>
+            <li>昵称：<span>@ViewBag.Nickname</span>  <span id="change_nickname">修改昵称</span>
+            @using (Html.BeginForm("ChangeNickname", "Account", FormMethod.Post, new { id = "change_form" }))
+            {
+                <input type="text" name="newNickname" id="nickname" value="">
+                <input type="submit" id="submit" value="提交">
+            }</li>
+            
+            <li>关注数：<a href="/Account/ShowAttendList"><span>@ViewBag.Attentcount</span></a></li>
+            <li>粉丝数：<a href="/Account/ShowFansList"><span>@ViewBag.Fanscount</span></a></li>
+            <li id="userbook_li">
+                你写过的书:
+                <ul id="userbook" class="userbook">
+                    <li><a href="novel.html">《斗破苍穹》</a></li>
+                    <li><a href="novel.html">《斗破苍穹》</a></li>
+                    <li><a href="novel.html">《斗破苍穹》</a></li>
+                    <li><a href="novel.html">《斗破苍穹》</a></li>
+                    <li><a href="novel.html">《斗破苍穹》</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "ShowFansList";
+}
+
+@section CSS{
+    <link rel="stylesheet" type="text/css" href="~/Content/fanslist.css" />
+
+    }
+
+<div class="user_content">
+    <div class="sidebar">
+        <p class="sidebar_title">个人书屋向导</p>
+        <ul>
+            <li><a href="/Account/ShowPersonInfo">个人信息</a></li>
+            <li><a href="~/Views/Account/ChangePassword.cshtml">修改密码</a></li>
+            <li><a href="/Account/ShowAttendList">关注列表</a></li>
+            <li><a href="/Account/ShowFansList">粉丝列表</a></li>
+        </ul>
+    </div>
+
+
+
+
+    <div class="show_content">
+        <h2>粉丝列表</h2>
+        <p>粉丝数：@ViewBag.fanscount</p>
+        <ul>
+            @foreach (var item in ViewBag.fanslist)
+            {
+                <li><span>昵称： @item</span></li>
+            }
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,143 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	text-decoration: none;
+	list-style-type: none;
+}
+
+body{
+	background-color: #FBF7F0;
+}
+div.head {
+	width: 100%;
+	min-width: 800px;
+	height:50px;
+	position: fixed;
+	top:0;
+	left:0;
+	z-index:100;
+	background-color: #F7F7F7;
+}
+.title{
+	position: relative;
+	float: left;
+}
+
+.dlzc{
+	position: relative;
+	float: right;
+	color: #4DB0E6; 
+}
+.dlzc div a{
+	color: #4DB0E6;
+}
+.dh,.sw,.sc,.zn,.lx,.tltle_p{
+	position: absolute;
+	top: 10px;
+	display: inline-block;
+	width: 100px;
+	height: 30px;
+	font-size: 20px;
+	line-height: 30px;
+	padding-left: 10px;
+	color:#4DB0E6;
+	margin-left:-50px;
+}
+.tltle_p {
+	left: 70px;
+	width: 250px;
+	color: black;
+}
+#title_dh{
+	width: 30px;
+	text-align: center;
+	padding-left: 0;
+	border: 1px solid #4DB0E6;
+	border-radius: 15px;
+	left: -20px;
+	cursor: pointer;
+	color:#222222;
+}
+#title_dh_content{
+	visibility: visible;
+}
+.sw{
+	left:-480px;
+}
+.sc{
+	left:-370px;
+}
+.zn{
+	left:-260px;
+}
+.lx{
+	left:-150px;
+}
+.sw a:hover,.sc a:hover,.zn a:hover,.lx a:hover{
+	color:#0000FF;
+	cursor: pointer;
+}
+
+.bodywrap{
+	width:1100px;
+	margin:0px auto 10px auto;
+}
+.logo{
+	margin:50px auto 0px auto;
+	padding: 10px 5%;
+	background-color: white;
+	
+}
+.logo img {
+	width:110px;
+	height:104px;
+	margin-left: 20px;
+}
+ .logo .wlogo{
+	height:104px;
+	width:260px;
+}
+.logo div{
+	text-align: center;
+	font-size: 30px;
+	width:65%;
+	height:110px;
+	float:right;
+}
+.logo div p {
+	line-height: 100px;
+	height: 100px;
+}
+nav {
+	text-align: center;
+}
+nav ul{
+	display: inline-block;
+	margin: 0 auto;
+	font-size: 0;
+	-webkit-text-size-adjust:none;
+}
+nav ul li {
+	display: inline-block;
+	font-size: 18px;
+	
+	background-color: #E1E1E1
+
+}
+nav ul li a{
+	display: inline-block;
+	border:1px solid #CCCCCC;
+	padding: 8px 15px;
+	width: 78px;
+	color: #954b4b;
+	font-weight: bold;
+	text-shadow: 1px 1px 3px #e2c2c2; 
+}
+.footer_hr{
+	margin-top: 30px;
+}
+footer p{
+	text-align: center;
+	color: black;
+	margin-top: 5px;
+}

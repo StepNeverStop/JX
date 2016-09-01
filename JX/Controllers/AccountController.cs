@@ -75,7 +75,7 @@ namespace JX.Controllers
             MyAccount.Nickname = newNickname;
             UpdateModel(MyAccount);
             db.SaveChanges();
-            return View();//到修改昵称成功的页面
+            return RedirectToAction("ShowPersonInfo");//到修改昵称成功的页面
         }
 
         //修改密码
@@ -94,16 +94,19 @@ namespace JX.Controllers
                     MyAccount.MD5Password = MD5Encipherment.MD5E(newPwd1);
                     UpdateModel(MyAccount);
                     db.SaveChanges();
-                    return View();//到修改密码成功的页面  并提示重新登录或下次登录请使用新密码
+                   
+                    return View("~/Views/Account/ChangePasswordSuccess.cshtml");//到修改密码成功的页面  并提示重新登录或下次登录请使用新密码
                 }
                 else
                 {
-                    return View();//到修改页面  提示新密码不一致
+                    ViewBag.Info = "新密码不一致，请重新输入";
+                    return RedirectToAction("ShowChangePwd","Account",ViewBag);//到修改页面  提示新密码不一致
                 }
             }
             else
             {
-                return View();//到修改页面   提示原密码验证失败
+                ViewBag.Info = "原密码验证失败，请重新输入";
+                return RedirectToAction("ShowChangePwd", "Account",ViewBag);//到修改页面   提示原密码验证失败
             }
         }
 
@@ -142,20 +145,25 @@ namespace JX.Controllers
         public int ShowAttendCount()//获取关注的数量
         {
             EntityDbContext db = new EntityDbContext();
-            return db.UserAttentions.Where(p => p.UserID == int.Parse(User.Identity.Name)).ToList().Count;
+            int id = db.Users.Where(p => p.Username.Equals(User.Identity.Name.ToString())).FirstOrDefault().ID;
+            return db.UserAttentions.Where(p => p.UserID == id).ToList().Count;
         }
 
         public int ShowFansCount()//获取粉丝的数量
         {
 
             EntityDbContext db = new EntityDbContext();
-            return db.UserAttentions.Where(p => p.BeAttentedUserID == int.Parse(User.Identity.Name)).ToList().Count;
+            int id = db.Users.Where(p => p.Username.Equals(User.Identity.Name.ToString())).FirstOrDefault().ID;
+            return db.UserAttentions.Where(p => p.BeAttentedUserID == id).ToList().Count;
         }
 
         public ActionResult ShowAttendList()//显示关注页面
         {
             EntityDbContext db = new EntityDbContext();
-            List<UserAttentions> uas= db.UserAttentions.Where(p => p.UserID == int.Parse(User.Identity.Name)).ToList();
+            Users MyAccount = db.Users.Where(p => p.Username.Equals(User.Identity.Name.ToString())).FirstOrDefault();
+            ViewBag.Nickname = MyAccount.Nickname;
+            int id = MyAccount.ID;
+            List<UserAttentions> uas= db.UserAttentions.Where(p => p.UserID == id).ToList();
             List<string> users = new List<string>();
             foreach(var item in uas)
             {
@@ -174,7 +182,10 @@ namespace JX.Controllers
         {
 
             EntityDbContext db = new EntityDbContext();
-            List<UserAttentions> uas = db.UserAttentions.Where(p => p.BeAttentedUserID == int.Parse(User.Identity.Name)).ToList();
+            Users MyAccount = db.Users.Where(p => p.Username.Equals(User.Identity.Name.ToString())).FirstOrDefault();
+            ViewBag.Nickname = MyAccount.Nickname;
+            int id = MyAccount.ID;
+            List<UserAttentions> uas = db.UserAttentions.Where(p => p.BeAttentedUserID == id).ToList();
             List<string> users = new List<string>();
             foreach (var item in uas)
             {
@@ -184,6 +195,32 @@ namespace JX.Controllers
             ViewBag.fanslist = users;
 
             return View();//显示粉丝页面
+        }
+
+        public ActionResult ShowPersonInfo()//个人书屋，显示个人信息
+        {
+            EntityDbContext db = new EntityDbContext();
+            Users MyAccount = db.Users.Where(p => p.Username.Equals(User.Identity.Name.ToString())).FirstOrDefault();
+            ViewBag.Nickname = MyAccount.Nickname;
+            ViewBag.Username = MyAccount.Username;
+
+            ViewBag.Attentcount = ShowAttendCount();
+            ViewBag.Fanscount = ShowFansCount();
+
+            return View();
+        }
+
+        public ActionResult ShowChangePwd()//修改密码页面
+        {
+            EntityDbContext db = new EntityDbContext();
+
+            return View();
+        }
+
+        public ActionResult ShowContactUs()//联系我们 页面
+        {
+
+            return View();
         }
     }
 }

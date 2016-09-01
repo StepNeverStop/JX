@@ -1,0 +1,44 @@
+.write{
+	border:1px solid black;
+	width:80%;
+
+	margin: 10px auto;
+}
+p.title{
+	width: 100%;
+	padding: 10px;
+	color: red;
+}
+.write_content{
+	text-align: center;
+	padding: 20px;
+}
+.write_form label{
+	display: inline-block;
+	padding: 10px;
+}
+.write_form *{
+	display: inline-block;
+}
+.write_form textarea,#submit{
+	padding: 10px;
+}
+.write_forml{
+	position: relative;
+}
+.write_forml label{
+	position: absolute;
+	top: -10px;
+	left: 10px;
+}
+.write_forml textarea{
+	margin-left: 70px;
+	border-radius: 5px;
+}
+#submit{
+	margin-top: 20px;
+	width: 100px;
+	border-radius: 5px;
+	border:0;
+	background: linear-gradient(to bottom,#1d7fe2,#002AFF);
+}

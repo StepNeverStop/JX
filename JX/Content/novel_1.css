@@ -1,0 +1,31 @@
+.content{
+	width:80%;
+	margin: 20px auto;
+	padding: 20px;
+}
+.content h1{
+	text-align: center;
+	color: red;
+	margin-bottom: 10px;
+}
+.content h3{
+	text-align: center;
+	margin-bottom: 20px;
+}
+.content p{
+	text-indent:2em;
+	font-size: 20px;
+	line-height: 40px;
+}
+.content div{
+	text-align: center;
+	margin-top: 20px;
+}
+.content a{
+	display: inline-block;
+	color: black;
+}
+.content a:hover{
+	text-decoration: underline;
+	color: #FE7800;
+}

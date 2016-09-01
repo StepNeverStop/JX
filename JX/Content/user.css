@@ -1,0 +1,75 @@
+.user_content{
+	margin-top: 10px;
+	position: relative;
+}
+.sidebar{
+	position: absolute;
+	border:1px solid black;
+	width:140px;
+	text-align: center;
+}
+.user_content p.sidebar_title{	
+	padding: 10px;
+	border-bottom: 1px solid black;
+}
+.user_content ul{
+	padding: 10px;
+}
+.user_content li{
+	padding: 10px;
+}
+.user_content li a{
+	display: inline-block;
+	color: black;
+	cursor: pointer;
+}
+.user_content li a:hover{
+	color: #FF3D00;
+	text-decoration: underline;
+}
+.show_content{
+	border:1px solid black;
+	margin-left: 160px;
+}
+.show_content h2{
+	margin: 20px;
+	font-weight: normal;
+}
+#change_nickname{
+	margin-left: 40px;
+	cursor: pointer;
+}
+#change_nickname:hover{
+	color: red;	
+}
+#change_form{
+	display: none;
+}
+#change_form input{
+	border-radius: 5px;
+	height: 30px;
+}
+#change_form #nickname{
+	padding: 0 10px;
+}
+#change_form #submit{
+	width:50px;
+	margin-left: 20px;
+}
+.show_content .userbook li{
+	padding: 5px;
+	padding-left: 20px;
+	margin-right: -180px;
+}
+.show_content .userbook li a{
+	font-size: 14px;
+	color: black;
+}
+#userbook{
+	display: none;
+}
+#userbook_li{
+	color:red;
+	width: 100px;
+	cursor: pointer;
+}

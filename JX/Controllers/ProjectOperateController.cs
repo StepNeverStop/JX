@@ -34,5 +34,11 @@ namespace JX.Controllers
 
             return View();//显示申请失败，请重新填写的页面
         }
+
+        public ActionResult ShowApplyForNewProject()//显示申请新项目的页面
+        {
+
+            return View();
+        }
     }
 }

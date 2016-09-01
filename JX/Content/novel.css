@@ -1,0 +1,70 @@
+.project{
+	margin-top: 20px;
+	background-color: #FBFDFE;
+}
+.project_name{
+	padding: 10px;
+	text-align: center;
+	color: black;
+}
+.project_status{
+	color: red;
+}
+.porject_type{
+	color: #666666;
+}
+.intro{
+	width:60%;
+	margin: 20px auto;
+	position: relative;
+}
+.project_name span{
+	font-size: 14px;
+	padding: 0 5px;
+}
+.intro h2{
+	padding-left: 20px;
+}
+.intro p{
+	padding: 20px;
+	text-indent: 32px;
+}
+.intro span{
+	font-size: 14px;
+	color: #666666;
+	position: absolute;
+	right: 26px;
+	top: 10px;
+}
+.charpter_h2{
+	width: 90%;
+	text-align: center;
+	margin:0 auto;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #bbbbbb;
+}
+.charpter{
+	width: 90%;
+	margin: 10px auto;
+	padding-bottom: 20px;
+}
+.charpter h4 {
+	margin:15px;
+}
+.charpter ul{
+	background: white;
+}
+.charpter li{
+	width: 32%;
+	display: inline-block;
+	text-align: center;
+	padding: 10px 0; 
+	border-bottom: 1px dotted #bbbbbb;
+}
+.charpter li a{
+	color: #3164CD;
+}
+.charpter li a:hover{
+	color: #FE7800;
+	text-decoration: underline;
+}

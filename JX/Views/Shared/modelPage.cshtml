@@ -1,0 +1,71 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/模板.css" />
+    @RenderSection("CSS", false);
+    <script type="text/javascript" src="~/myScripts/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="~/myScripts/模板.js"></script>
+    @RenderSection("JS", false);
+</head>
+<body>
+    <div class="head">
+        <div class="title">
+            <div class="tltle_p ">欢迎您回来：@ViewBag.Nickname</div>
+            <a href="/Account/SignOut">退出</a>
+        </div>
+        <DIV class="dlzc">
+            <div id="title_dh_content">
+                <div class="sw"><a href="/Account/ShowPersonInfo">个人书屋 |</a></div>
+                <div class="sc"><a href="/Account/ShowAttendList">关注列表 |</a></div>
+                <div class="zn"><a href="/ProjectOperate/ShowApplyForNewProject">我要写书 |</a></div>
+                <div class="lx"><a href="/Account/ShowContactUs">联系我们</a></div>
+            </div>
+            <div class="dh" id="title_dh">&lt;&lt;</div>
+        </DIV>
+    </div>
+
+
+    <div class="logo">
+        <img src="~/Images/logo.jpg" alt="军师网logo" />
+        <img class="wlogo" src="~/Images/logo.png" alt="军师网logo">
+        <div>
+            <p>百万军师带你畅游小说海洋,百万军师与你创作小说盛世</p>
+        </div>
+    </div>
+    <div class="bodywrap">
+        <nav>
+            <ul>
+                <li><a href="/Home/HomePage">首页</a></li>
+                <li><a href="/Project/ShowXuanhuanList">玄幻</a></li>
+                <li><a href="/Project/ShowXiuzhenList">修真</a></li>
+                <li><a href="/Project/ShowDushiList">都市</a></li>
+                <li><a href="/Project/ShowYanqingList">言情</a></li>
+                <li><a href="/Project/ShowJitangList">鸡汤</a></li>
+                <li><a href="/Project/ShowWeixiaoshuoList">微小说</a></li>
+                <li><a href="/Project/ShowBijiList">笔记</a></li>
+            </ul>
+        </nav>
+
+        <div>
+            @RenderBody()
+        </div>
+        <hr class="footer_hr" />
+        <footer>
+            <p>
+                本站所收录作品、社区话题、书库评论及本站所做之
+                广告均属其个人行为，与本站立场无关
+            </p>
+            <p>
+                所有的作品、图书、资料均为网友更新、如果侵犯了您的权利、
+                请与本站联系、本站将立刻删除。 联系邮箱：1413250892@qq.com
+            </p>
+            <p>
+                Copyright © 2016.6 All Rights Reserved.
+                版权所有 军师网 技术支持：军师网
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

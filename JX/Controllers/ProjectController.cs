@@ -84,5 +84,13 @@ namespace JX.Controllers
             ViewBag.biji = a.Projects;
             return View();
         }
+
+        public ActionResult DetailD()//阅读单人创作小说
+        {
+            EntityDbContext db = new EntityDbContext();
+
+
+            return View();
+        }
     }
 }

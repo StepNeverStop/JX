@@ -1,0 +1,45 @@
+.user_content{
+	margin-top: 10px;
+	position: relative;
+}
+.sidebar{
+	position: absolute;
+	border:1px solid black;
+	width:140px;
+	text-align: center;
+}
+.user_content p.sidebar_title{	
+	padding: 10px;
+	border-bottom: 1px solid black;
+}
+.user_content ul{
+	padding: 10px;
+}
+.user_content li{
+	padding: 10px;
+}
+.user_content li a{
+	display: inline-block;
+	color: black;
+	cursor: pointer;
+}
+.user_content li a:hover{
+	color: #FF3D00;
+	text-decoration: underline;
+}
+.show_content{
+	border:1px solid black;
+	margin-left: 160px;
+}
+.show_content h2{
+	margin: 20px;
+	font-weight: normal;
+	margin-bottom: 0;
+}
+.show_content ul{
+	padding-left: 40px;
+	
+}
+.show_content ul span{
+	padding-left: 20px;
+}

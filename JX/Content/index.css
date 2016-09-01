@@ -1,0 +1,76 @@
+.s_good_project{
+	position: relative;
+	height: 200px;
+	background-color: #F3F6FB;
+	text-align: center;
+	width: 1100px;
+	margin: 0px auto;
+	padding-top: 15px;
+}
+.s_good_project_tltle{
+	text-align: left;
+	font-size: 25px;
+	margin: 15px;
+	margin-top: 0px;
+	
+}
+.good_project{
+	position: relative;
+	display: inline-block;
+	text-align: left;
+	width: 280px;
+	height:100px;
+	border:0px;
+	margin: 10px;
+	margin-top: 0px;
+	padding:20px;
+
+}
+.good_project h2{
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+.good_project h2:hover{
+	color: red;
+}
+.good_project_intro{
+	text-indent: 20px;
+}
+.good_project p{
+	font-size: 14px;
+	line-height: 18px;
+}
+.good_project a{
+	color: #FD6600;
+}
+.projects{
+	margin: 5px 0;
+	border:1px solid #cecece;
+}
+.project{
+	height:100px;
+	margin: 10px 0;
+	padding: 15px;
+}
+.project_name{
+	font-size: 26px;
+	font-weight: bold;
+}
+.project span{
+	display: inline-block;
+	padding: 10px;
+	padding-top: 0;
+}
+.project_name a{
+	color:	black;
+}
+.project_name :hover{
+	color: red;
+}
+.project_status{
+	color: red;
+}
+.project_intro{
+	text-indent: 32px;
+	padding-left: 10px;
+}

@@ -1,0 +1,24 @@
+﻿@using JX.Models
+@{
+    ViewBag.Title = "ShowDushiList";
+}
+
+@section CSS
+{
+    <link rel="stylesheet" type="text/css" href="~/Content/index.css" />
+}
+<div class="projects">
+    @foreach (var item in ViewBag.dushi as IEnumerable<Projects>)
+    {
+        <div class="project">
+            <span class="project_name"><a href="project.html">@item.ProjectName</a></span>
+            <span class="project_type">[都市]</span>
+            <span class="project_status">状态：@item.ProjectStates.StateName</span>
+            <p class="project_intro">
+                @item.ProjectIntro
+            </p>
+        </div>
+    }
+
+</div>
+

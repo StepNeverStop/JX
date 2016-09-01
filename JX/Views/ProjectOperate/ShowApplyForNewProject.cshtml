@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "ShowApplyForNewProject";
+}
+@section CSS{
+    <link rel="stylesheet" type="text/css" href="~/Content/write.css" />
+    }
+
+@section JS{
+    <script type="text/javascript" src="~/myScripts/write.js"></script>
+    }
+<div class="write">
+    <p class="title">>>申请创作</p>
+    <hr />
+    <div class="write_content">
+        <form class="write_form" action="/ProjectOperate/ApplyForNewProject" method="post">
+            <label for="projectName">题目</label><input class="wrire_title" id="projectName" type="text">
+            <label for="writeType">创作模式</label>
+            <select class="write_model" id="writeType">
+                <option value="单人">单人</option>
+                <option value="多人" selected="selected">合作</option>
+            </select>
+
+
+            <label>创作类型个数最多为3</label>
+            <br />
+            <label for="xuhuan">玄幻</label>
+            <input type="checkbox" name="type" id="xuhuan" />
+            <label for="xianxia">仙侠</label>
+            <input type="checkbox" name="type" id="xianxia" />
+            <label for="dushi">都市</label>
+            <input type="checkbox" name="type" id="dushi" />
+            <label for="yanqing">言情</label>
+            <input type="checkbox" name="type" id="yanqing" />
+            <label for="wangyou">网游</label>
+            <input type="checkbox" name="type" id="wangyou" />
+            <label for="weixiaoshuo">微小说</label>
+            <input type="checkbox" name="type" id="weixiaoshuo" />
+            <label for="qita">其他</label>
+            <input type="checkbox" name="type" id="qita" />
+            <br />
+
+
+
+            <div class="write_forml">
+                <label for="projectIntro">简介</label>
+                <textarea maxlength="200" id="projectIntro" cols="40" rows="10" placeholder="请在此填写您的小说简介，最多200字"></textarea>
+            </div>
+            <br />
+            <input id="submit" type="submit" value="提交">
+        </form>
+    </div>
+</div>
+
